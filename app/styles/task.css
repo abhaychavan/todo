@@ -1,0 +1,20 @@
+ .addFormClass
+         {
+              border: solid;
+                margin: auto;
+                padding: 5px;
+                top: 0;bottom: 0;left: 0;right: 0;
+                width: 20%;
+               
+
+          }
+          .editTaskClass
+         {
+              border: solid;
+                margin: auto;
+                padding: 5px;
+                top: 0;bottom: 0;left: 0;right: 0;
+                width: 20%;
+               
+
+          }

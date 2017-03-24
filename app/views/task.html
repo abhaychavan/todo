@@ -1,0 +1,52 @@
+<!--Add New Task Form-->
+    <div ng-show="showAddForm">
+        <h1 align="center">Add Task Form</h1>
+    <form name="form" class="addFormClass" ng-submit="saveTask()">
+        
+    <label><span>Date</span></label> 
+       <input type="text" placeholder="Enter Date" name="date" ng-model="newtask.date" required/></br>
+    <label><span>Task</span></label> 
+      <input type="text" placeholder="Enter Task" name="task" ng-model="newtask.task" required/></br>
+       <input type="hidden" ng-model="newtask.id"/>
+     <span><button type="submit" ng-disabled="form.$invalid">Submit</button></span>
+   </form>
+   </div>
+
+<!--Showing array in table format-->
+<div ng-show="showList" class="listClass">
+      <button ng-click="showAdd();">Add Task</button> 
+  <h1 align="center">List Of Task To Do</h1>
+  <table border="1" align="center">
+   <thead>
+  <tr>
+    <th>Date</th>
+    <th>Task</th>
+    <th></th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="arr in array">
+    <td>{{ arr.date }}</td>
+    <td>{{ arr.task }}</td>
+    <td>
+        <button ng-click="edit(arr.id)">Edit</button>
+        <button ng-click="delete(arr.id)">Delete</button>
+    </td>
+</tr>
+</tbody>
+</table>    
+</div>
+
+
+<!--Edit Task Form-->
+<div ng-show="showEdit">
+    <h1 align="center">Edit Form</h1>
+    <form name="form" class="editTaskClass" ng-submit="updateTask()">
+        <label><span>Date</span></label>
+        <input type="text" id="date" ng-model="date" required></br>
+        <label><span>Task</span></label>
+        <input type="text" id="task" ng-model="task" required><br>
+         <span><button type="submit" ng-disabled="form.$invalid">Submit</button></span>
+    </form>
+</div>
+
